@@ -153,4 +153,42 @@ router.put('/change-password', auth, [
   }
 });
 
+// Seed Admin Account (One-time use)
+router.post('/seed-admin', async (req, res) => {
+  try {
+    const existing = await Student.findOne({ email: 'admin@college.edu' });
+    if (existing) {
+      return res.status(400).json({ message: 'Admin already exists' });
+    }
+
+    const admin = new Student({
+      registrationNumber: 'ADMIN001',
+      email: 'admin@college.edu',
+      password: 'admin123',
+      firstName: 'System',
+      lastName: 'Administrator',
+      dateOfBirth: new Date('1990-01-01'),
+      gender: 'Male',
+      phone: '9000000000',
+      admissionCategory: 'OTHER',
+      admissionYear: 2020,
+      program: 'ADMIN',
+      branch: 'ADMIN',
+      role: 'admin',
+      batch: '2020-2024'
+    });
+
+    await admin.save();
+    res.json({ 
+      message: 'Admin account created successfully',
+      credentials: {
+        email: 'admin@college.edu',
+        password: 'admin123'
+      }
+    });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error', error: error.message });
+  }
+});
+
 module.exports = router;
