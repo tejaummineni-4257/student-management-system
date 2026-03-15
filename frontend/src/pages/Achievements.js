@@ -167,7 +167,7 @@ export default function Achievements() {
 
                 <div style={{ display: 'flex', gap: 8 }}>
                   {ach.certificates?.length > 0 && (
-                    <a href={`http://localhost:5000${ach.certificates[0].path}`} target="_blank" rel="noreferrer" className="btn btn-ghost btn-sm">
+                    <a href={`https://student-management-system-2-d75i.onrender.com${ach.certificates[0].path}`} target="_blank" rel="noreferrer" className="btn btn-ghost btn-sm">
                       📎 Certificate
                     </a>
                   )}

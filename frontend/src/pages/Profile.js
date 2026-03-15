@@ -93,7 +93,7 @@ export default function Profile() {
               border: '3px solid var(--border)'
             }}>
               {profile.profilePhoto
-                ? <img src={`http://localhost:5000${profile.profilePhoto}`} alt="Profile" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                ? <img src={`https://student-management-system-2-d75i.onrender.com${profile.profilePhoto}`} alt="Profile" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 : initials
               }
             </div>

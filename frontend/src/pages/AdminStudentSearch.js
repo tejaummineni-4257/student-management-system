@@ -97,7 +97,7 @@ export default function AdminStudentSearch() {
                 border: '3px solid rgba(59,130,246,0.3)'
               }}>
                 {s.profilePhoto
-                  ? <img src={`http://localhost:5000${s.profilePhoto}`} alt="Profile" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  ? <img src={`https://student-management-system-2-d75i.onrender.com${s.profilePhoto}`} alt="Profile" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   : `${s.firstName?.[0]}${s.lastName?.[0]}`
                 }
               </div>
@@ -222,7 +222,7 @@ export default function AdminStudentSearch() {
                           <td><span className={`badge ${STATUS_BADGE[a.status]}`}>{a.status}</span></td>
                           <td>
                             {a.certificates?.length > 0
-                              ? <a href={`http://localhost:5000${a.certificates[0].path}`} target="_blank" rel="noreferrer" className="btn btn-ghost btn-sm">👁️ View</a>
+                              ? <a href={`https://student-management-system-2-d75i.onrender.com${a.certificates[0].path}`} target="_blank" rel="noreferrer" className="btn btn-ghost btn-sm">👁️ View</a>
                               : <span style={{ color: 'var(--text-muted)', fontSize: 12 }}>None</span>
                             }
                           </td>
@@ -255,7 +255,7 @@ export default function AdminStudentSearch() {
                             ? <span className="badge badge-green" style={{ fontSize: 10 }}>✅ Verified</span>
                             : <button className="btn btn-success btn-sm" style={{ fontSize: 11 }} onClick={() => handleVerifyDoc(doc._id)}>✅ Verify</button>
                           }
-                          <a href={`http://localhost:5000${doc.path}`} target="_blank" rel="noreferrer" className="btn btn-ghost btn-sm" style={{ fontSize: 11 }}>👁️ View</a>
+                          <a href={`https://student-management-system-2-d75i.onrender.com${doc.path}`} target="_blank" rel="noreferrer" className="btn btn-ghost btn-sm" style={{ fontSize: 11 }}>👁️ View</a>
                         </div>
                       </div>
                     </div>
