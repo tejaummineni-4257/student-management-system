@@ -15,7 +15,14 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:5173', 'http://127.0.0.1:3000', 'http://127.0.0.1:5173'],
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:5173',
+    'http://127.0.0.1:3000',
+    'http://127.0.0.1:5173',
+    'https://student-management-system.vercel.app',
+    'https://student-management-system-git-main-tejaummineni-4257.vercel.app'
+  ],
   credentials: true
 }));
 app.use(express.json({ limit: '50mb' }));
