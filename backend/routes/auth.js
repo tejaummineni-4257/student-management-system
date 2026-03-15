@@ -153,8 +153,18 @@ router.put('/change-password', auth, [
   }
 });
 
-// Seed Admin Account (One-time use)
+// Seed Admin Account (One-time use) - Allow all origins for this endpoint
 router.post('/seed-admin', async (req, res) => {
+  // Set CORS headers to allow all origins
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  
+  // Handle preflight request
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
+  
   try {
     const existing = await Student.findOne({ email: 'admin@college.edu' });
     if (existing) {
