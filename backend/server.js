@@ -21,7 +21,8 @@ app.use(cors({
     'http://127.0.0.1:3000',
     'http://127.0.0.1:5173',
     'https://student-management-system.vercel.app',
-    'https://student-management-system-git-main-tejaummineni-4257.vercel.app'
+    'https://student-management-system-git-main-tejaummineni-4257.vercel.app',
+    'https://student-management-system-kohl-ten.vercel.app'
   ],
   credentials: true
 }));
