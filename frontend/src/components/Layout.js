@@ -103,7 +103,7 @@ export default function Layout() {
           <div className="user-card">
             <div className="user-avatar">
               {user?.profilePhoto
-                ? <img src={`http://localhost:5000${user.profilePhoto}`} alt="profile" />
+                ? <img src={`http://localhost:5001${user.profilePhoto}`} alt="profile" />
                 : initials
               }
             </div>
