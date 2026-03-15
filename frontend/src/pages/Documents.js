@@ -3,6 +3,8 @@ import { useDropzone } from 'react-dropzone';
 import toast from 'react-hot-toast';
 import { documentAPI } from '../utils/api';
 
+const API_BASE_URL = process.env.REACT_APP_API_URL?.replace('/api', '') || 'http://localhost:5000';
+
 const DOC_TYPES = [
   { value: 'MARK_MEMO', label: '📊 Mark Memo', needsSem: true },
   { value: 'AADHAAR_CARD', label: '🪪 Aadhaar Card' },
@@ -242,7 +244,7 @@ export default function Documents() {
                   </span>
                   <div style={{ marginLeft: 'auto', display: 'flex', gap: 4 }}>
                     <a
-                      href={`https://student-management-system-2-d75i.onrender.com${doc.path}`}
+                      href={`${API_BASE_URL}${doc.path}`}
                       target="_blank" rel="noreferrer"
                       className="btn btn-ghost btn-sm"
                       style={{ padding: '4px 8px', fontSize: 12 }}
