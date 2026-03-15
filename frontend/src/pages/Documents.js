@@ -242,7 +242,7 @@ export default function Documents() {
                   </span>
                   <div style={{ marginLeft: 'auto', display: 'flex', gap: 4 }}>
                     <a
-                      href={`http://localhost:5001${doc.path}`}
+                      href={`http://localhost:5000${doc.path}`}
                       target="_blank" rel="noreferrer"
                       className="btn btn-ghost btn-sm"
                       style={{ padding: '4px 8px', fontSize: 12 }}
